@@ -1,0 +1,1 @@
+This script is a simple two-line Bash script that prints the absolute path of the current working directory. It is used to demonstrate basic shell scripting and the use of Bash  (`#!/bin/bash`) to specify the interpreter.
