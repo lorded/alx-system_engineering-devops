@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Connects to the local server using the private key with user ubuntu
-ssh -i ~/.ssh/id_rsa -o User=ubuntu 54.146.62.81
+ssh -i ~/.ssh/school -o User=ubuntu 54.146.62.81
 
