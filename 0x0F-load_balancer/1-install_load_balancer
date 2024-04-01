@@ -37,8 +37,8 @@ frontend http_front
 
 backend http_back
     balance roundrobin
-    server web-01 54.146.62.81:80 check
-    server web-02 54.173.110.138:80 check
+    server 518502-web-01 54.146.62.81:80 check
+    server 518502-web-02 54.173.110.138:80 check
 
 EOF
 
