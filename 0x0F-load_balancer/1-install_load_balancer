@@ -1,11 +1,11 @@
+User
 #!/usr/bin/env bash
-
 # Install HAProxy
-sudo apt update
-sudo apt install -y haproxy
+apt update
+apt install -y haproxy
 
 # Configure HAProxy
-sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOF
+cat <<EOF > /etc/haproxy/haproxy.cfg
 global
     log /dev/log    local0
     log /dev/log    local1 notice
@@ -40,11 +40,12 @@ backend http_back
     balance roundrobin
     server 518502-web-01 54.146.62.81:80 check
     server 518502-web-02 54.173.110.138:80 check
+
 EOF
 
 # Enable HAProxy service management via init script
-sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+
 
 # Restart HAProxy service
-sudo service haproxy restart
-
+service haproxy restart
