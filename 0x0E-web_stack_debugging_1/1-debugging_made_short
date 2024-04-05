@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # configures a server to listening on port 80 of all servers active IPv4 IPs
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo nginx -s reload 2>/dev/null || echo "nginx is not running"
+sudo nginx -t > /dev/null 2>&1 || sudo service nginx stop > /dev/null 2>&1 && sudo service nginx start
 
