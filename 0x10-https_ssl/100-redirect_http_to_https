@@ -41,7 +41,7 @@ frontend shawntech-frontend
         default_backend shawntech-backend
 
 frontend shawntech-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/shawntech.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.shawntech.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend shawntech-backend
 
